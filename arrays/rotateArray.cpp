@@ -13,11 +13,12 @@ int main() {
   int k;
   cin >> k;
   k %= n;
-  vector<int> temp(n);
-  for (int i = 0; i < k; i++) temp[i] = arr[n-k+i];
-  for (int i = 0; i < n-k; i++) temp[k + i] = arr[i];
+  
+  reverse(arr.begin(), arr.end());
+  reverse(arr.begin(), arr.begin()+k);
+  reverse(arr.begin()+k, arr.end());
 
-  for (long num : temp) cout << num << " ";
+  for (long num : arr) cout << num << " ";
   cout << '\n';
 
   return 0;
